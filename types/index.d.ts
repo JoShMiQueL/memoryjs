@@ -12,8 +12,10 @@ import type { TriggerType } from "./models/enums/TriggerType.d.";
 
 declare namespace MemoryJs {
 
-    function openProcess(pid: number): Process;
-    function openProcess(pid: number, callback: Callback<Process>): void;
+    function openProcess(processName: string): Process;
+    function openProcess(processName: string, callback: Callback<Process>): void;
+
+    function closeProcess(handle: number): void;
 
     function getProcesses(): Process[];
     function getProcesses(callback: Callback<Process[]>): void;
